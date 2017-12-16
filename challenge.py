@@ -52,7 +52,7 @@ def get_api_data(url_index):
 
     while True:
         r = requests.get(URL[url_index] + f'&page={page}').json()
-        if r['menus'] == []:
+        if r.get('menus') == []:
             break
         else:
             menus += r['menus']
@@ -164,7 +164,7 @@ def main():
     except KeyError:
         print('URL index can only be 1 or 2.')
         sys.exit()
-
+    
     parents = find_parents(menus)
     branches = get_children(menus, parents)
     classification = validate_menus(branches)
