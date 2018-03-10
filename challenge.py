@@ -81,7 +81,7 @@ def find_parents(menus):
 
 def get_children(menus, parents):
     """
-    Uses a depth-first traversal algorithm to find all the children of parent menus.
+    Finds all the children of parent menus.
 
     :param list menus: List of menu dictionaries
     :param list parents: List of parent menu dictionaries
